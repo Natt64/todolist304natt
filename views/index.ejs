@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My To-Do List</title>
+    <link href="css/todo.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="todo.js"></script>
+
+</head>
+<body>
+
+<div>hello, <%= username%> | or <a href="/logout">LogOut</a></div>
+<div class="container">
+
+    <div id="to-do">
+        <h1>My To-do List</h1>
+        <!-- add button here -->
+        <button id="add-todo">Add to-do item</button>
+
+        <h2>To Be Done</h2>
+        <ul id="todo-list" class="sortlist">
+
+        </ul>
+    </div>
+    <div id="completed">
+        <h2>Completed Tasks</h2>
+        <ul id="completed-list" class="sortlist">
+
+        </ul>
+    </div>
+    <!-- add dialog box here -->
+    <div id="new-todo-dialog" title="Add to-do item">
+        <form>
+            <p>
+                <label for="new-name"> Task Name:</label>
+                <input type="text" name="task" id="new-name">
+            </p>
+
+            <p>
+                <label for="new-user"> User Name:</label>
+                <input type="text" name="task" id="new-user">
+            </p>
+        </form>
+    </div>
+    <div id="edit-todo-dialog" title="Edit to-do item" style = "display : none;">
+        <form>
+            <p>
+                <label for="edit-name"> Task Name:</label>
+                <input type="text" name="task" id="edit-name">
+                <label for="edit-user"> User Name:</label>
+                <input type="text" name="task" id="edit-user">
+            </p>
+        </form>
+    </div>
+    <div id="dialog-confirm" title="Confirm deletion" style = "display : none;">
+        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>
+            Do you want to confirm deletion?
+        </p>
+    </div>
+
+</div>
+</body>
+</html>

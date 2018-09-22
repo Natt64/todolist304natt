@@ -7,7 +7,7 @@ app.use(session({secret: 'nwen304-project-part2', cookie: {maxAge: 60*60*1000}})
 
 //pg
 const Pg = require('pg')
-const pgClient = new Pg.Client("postgres://postgres:1041501@localhost:5432/postgres")
+const pgClient = new Pg.Client("postgres://hljfwixkwynrrn:920ab1d6915e942e57bc0f6f69cca224dd6f794d8b33db176fae5b1513b79191@ec2-54-83-29-34.compute-1.amazonaws.com:5432/dem4l87urpps15?ssl=true")
 pgClient.connect()
 // pgClient.query('select * from "Users"', (err, res) => {
 //     if(!err){
@@ -194,6 +194,7 @@ app.post('/api/task/:taskid/remove', async (req,res) =>{
     res.json({ack: true})
 })
 
-app.listen(3000, () =>{
+const PORT = process.env.PORT || 8000
+app.listen(PORT, () =>{
     console.log('start!')
 })
